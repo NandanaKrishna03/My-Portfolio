@@ -5,20 +5,34 @@
   --font-mono: var(--font-geist-mono);
 }
 
+/* Light Theme */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --light-hover: #e6b9f7; /* Light Hover */
+  --dark-hover: #2a0040;  /* Dark Hover */
+  --dark-theme: #11001F;  /* Dark Theme */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Dark Theme */
+.dark {
+  --light-hover: #2a0040;
+  --dark-hover: #fcf4ff;
+  --dark-theme: #f8f9fa;
+}
+
+/* Global Box Shadow */
+:root {
+  --shadow-black: 4px 4px 0 #947a7a;
+  --shadow-white: 4px 4px 0 #fff;
+}
+
+
+@layer utilities {
+  .grid-cols-auto {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+/* Global Font */
+* {
+  font-family: Outfit, var(--font-ovo), serif;
 }
